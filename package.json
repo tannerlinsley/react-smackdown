@@ -24,7 +24,8 @@
     "markdown-loader": "^2.0.1",
     "markdown-to-jsx": "^5.4.2",
     "raw-loader": "^0.5.1",
-    "react-lowlight": "^1.1.1"
+    "react-lowlight": "^1.1.1",
+    "styled-components": "^2.1.2"
   },
   "peerDependencies": {
     "react": "15.x"
