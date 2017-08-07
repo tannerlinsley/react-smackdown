@@ -8,5 +8,19 @@ module.exports = {
         react: 'React'
       }
     }
-  }
+  },
+  webpack: {
+		extra: {
+			module: {
+				rules: [
+					{
+						test: /\.md$/,
+						use: [
+              { loader: 'raw-loader' }
+            ]
+					}
+				]
+			}
+		}
+	}
 }

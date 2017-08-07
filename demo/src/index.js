@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
-
-import Example from '../../src'
+import Markdown from '../../src'
+import md from './demo.md'
 
 class Demo extends Component {
   render() {
-    return <div>
-      <h1>react-smackdown Demo</h1>
-      <Example/>
-    </div>
+    return (
+      <div>
+        <Markdown source={md} />
+      </div>
+    )
   }
 }
 

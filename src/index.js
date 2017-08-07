@@ -1,9 +1,28 @@
-import React, {Component} from 'react'
+import React from 'react'
+import MarkdownRender, { compiler } from 'markdown-to-jsx'
+import CodeRenderer from './CodeRenderer'
+import Wrapper from './Wrapper'
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
+const Markdown = ({ source }) => {
+  const content = (
+    <MarkdownRender
+      options={{
+        overrides: {
+          code: {
+            component: CodeRenderer
+          }
+        }
+      }}
+    >
+      {source}
+    </MarkdownRender>
+  )
+
+  return (
+    <Wrapper className="smackdown markdown">
+      {content}
+    </Wrapper>
+  )
 }
+
+export default Markdown
