@@ -30,12 +30,16 @@ export default styled.div`
   code {
     border-radius: 4px;
     padding: 0 .25rem;
-    display: inline-block !important;
+    background: #F4F5F6;
+    display: inline;
     line-height: 1.5;
+    word-break: break-all;
   }
 
   pre code {
     font-size: 1.1rem;
+    display: inline-block;
+    color: #343240;
     border: none;
     word-break: break-all;
     white-space: pre-wrap;
