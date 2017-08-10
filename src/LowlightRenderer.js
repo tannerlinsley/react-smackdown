@@ -1,11 +1,15 @@
 import React from 'react';
 import Lowlight from 'react-lowlight';
 
-export default (languageDefinitions) => {
-  Object.keys(languageDefinitions).forEach((language) => {
-    const definition = languageDefinitions[language];
+// This feels really hacky, but I'm not sure of a better solution.
+// We can't just use import * from 'highlight.js/lib/languages', because
+// highlight.js does not include an index.js file in the languages dir.
+const importLanguage = language => require(`highlight.js/lib/languages/${language}`);
 
-    Lowlight.registerLanguage(language, definition);
+export default (languageDefinitions) => {
+  languageDefinitions.map(name => {
+    const language = importLanguage(name);
+    Lowlight.registerLanguage(name, language);
   });
 
   const Code = ({ className = '', children }) => {
