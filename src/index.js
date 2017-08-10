@@ -1,15 +1,19 @@
 import React from 'react'
 import MarkdownRender, { compiler } from 'markdown-to-jsx'
-import CodeRenderer from './CodeRenderer'
+import LowlightRenderer from './LowlightRenderer'
 import Wrapper from './Wrapper'
 
-const Markdown = ({ source }) => {
+const Markdown = ({
+  source,
+  languages = ['javascript', 'shell', 'json', 'css'],
+  theme = 'light'
+}) => {
   const content = (
     <MarkdownRender
       options={{
         overrides: {
           code: {
-            component: CodeRenderer
+            component: LowlightRenderer(languages)
           }
         }
       }}
@@ -19,7 +23,7 @@ const Markdown = ({ source }) => {
   )
 
   return (
-    <Wrapper className="smackdown markdown">
+    <Wrapper className="smackdown markdown" theme={theme}>
       {content}
     </Wrapper>
   )
