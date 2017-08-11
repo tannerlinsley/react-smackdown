@@ -1,7 +1,32 @@
-```js
+### Javascript
+```javascript
 function hello() {
   return 'hello!'
 }
+```
+
+### Ruby
+```ruby
+def hello
+  'hello!'
+end
+```
+
+
+### Elixir
+```elixir
+  def hello(), do: 'hello!'
+```
+
+
+### SQL
+```sql
+  SELECT * FROM USERS
+```
+
+### JSON
+```json
+  { "message": "hello" }
 ```
 
 # H1

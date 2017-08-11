@@ -20,6 +20,7 @@ export default (languageDefinitions) => {
 
     return language ? <Lowlight {...props} /> : <code>{ value }</code>;
   };
+
   Code.propTypes = {
     className: React.PropTypes.string,
     children: React.PropTypes.node

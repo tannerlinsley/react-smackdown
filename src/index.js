@@ -1,32 +1,26 @@
 import React from 'react'
-import MarkdownRender, { compiler } from 'markdown-to-jsx'
+import MarkdownRender from 'markdown-to-jsx'
 import LowlightRenderer from './LowlightRenderer'
-import Wrapper from './Wrapper'
 
+// See https://github.com/isagalaev/highlight.js/tree/master/src/languages
+// for all language options and https://github.com/isagalaev/highlight.js/tree/master/src/styles
+// for all theming options
 const Markdown = ({
   source,
   languages = ['javascript', 'shell', 'json', 'css'],
   theme = 'light'
-}) => {
-  const content = (
-    <MarkdownRender
-      options={{
-        overrides: {
-          code: {
-            component: LowlightRenderer(languages)
-          }
+}) => (
+  <MarkdownRender
+    options={{
+      overrides: {
+        code: {
+          component: LowlightRenderer(languages)
         }
-      }}
-    >
-      {source}
-    </MarkdownRender>
-  )
-
-  return (
-    <Wrapper className="smackdown markdown" theme={theme}>
-      {content}
-    </Wrapper>
-  )
-}
+      }
+    }}
+  >
+    {source}
+  </MarkdownRender>
+)
 
 export default Markdown
