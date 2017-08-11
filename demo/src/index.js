@@ -4,8 +4,6 @@ import { javascript, ruby, sql, elixir, json } from 'react-syntax-highlighter/di
 import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
 import Markdown from '../../src'
 import md from './demo.md'
-// import 'highlight.js/styles/atom-one-light.css'
-// import '../../src/smackdown.css'
 
 const syntax = {
   languages: [
@@ -16,6 +14,7 @@ const syntax = {
     { name: 'json', syntax: json }
   ],
   showLineNumbers: true,
+  lineNumberStyle: { opacity: .5 },
   theme: atomOneLight
 }
 
