@@ -19,10 +19,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "highlight.js": "^9.12.0",
     "markdown-to-jsx": "^5.4.2",
-    "raw-loader": "^0.5.1",
-    "react-lowlight": "^1.1.1",
     "react-syntax-highlighter": "^5.6.2"
   },
   "peerDependencies": {
@@ -30,6 +27,7 @@
   },
   "devDependencies": {
     "nwb": "0.18.x",
+    "raw-loader": "^0.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
