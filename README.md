@@ -20,13 +20,22 @@ Usage:
 
 ```javascript
   import Smackdown from 'smackdown'
-  import 'smackdown/smackdown.css' // optional
-  import 'highlight.js/styles/atom-one-light.css' // pick your favorite
+  import { javascript } from 'react-syntax-highlighter/dist/languages'
+  import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
   import md from './markdown.md'
+
+  const syntax = {
+    languages: [
+      { name: 'javascript', syntax: javascript }
+    ],
+    showLineNumbers: true,
+    lineNumberStyle: { opacity: .5 },
+    theme: atomOneLight
+  }
 
   <Smackdown
     source={md}
-    languages={['ruby', 'sql', 'javascript', 'elixir', 'json']}
+    syntax={syntax}
   />
 ```
 
