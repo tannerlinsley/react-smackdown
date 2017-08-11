@@ -1,11 +1,6 @@
 import React from 'react';
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light'
 
-// This feels really hacky, but I'm not sure of a better solution.
-// We can't just use import * from 'highlight.js/lib/languages', because
-// highlight.js does not include an index.js file in the languages dir.
-// const importLanguage = language => require(`highlight.js/lib/languages/${language}`);
-//
 export default ({ languages, theme, ...rest }) => {
   // Register required languages through lowlight
   languages.forEach(language => {
