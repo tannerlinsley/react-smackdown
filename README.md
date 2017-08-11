@@ -6,8 +6,6 @@
 
 React-Smackdown makes it super easy for you to get started with github flavored markdown (via markdown-to-jsx) and syntax highlighting for over 175 languages (powered by highlight.js). It uses Lowlight under the hood (via react-syntax-highlighter) for extremely efficient rendering and is easy to override and theme.
 
-Some default styles are included to make code rendering nice at './src/smackdown.css' but you absolutely do not need to import it.
-
 Available Languages:
 
 https://github.com/isagalaev/highlight.js/tree/master/src/languages

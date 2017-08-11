@@ -5,6 +5,14 @@ function hello() {
 }
 ```
 
+```
+<button />
+```
+
+```bash
+bundle exec smackdown install
+```
+
 ### Ruby
 ```ruby
 def hello
@@ -15,18 +23,18 @@ end
 
 ### Elixir
 ```elixir
-  def hello(), do: 'hello!'
+def hello(), do: 'hello!'
 ```
 
 
 ### SQL
 ```sql
-  SELECT * FROM USERS
+SELECT * FROM USERS
 ```
 
 ### JSON
 ```json
-  { "message": "hello" }
+{ "message": "hello" }
 ```
 
 # H1

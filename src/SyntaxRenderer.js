@@ -26,7 +26,7 @@ export default ({ languages, theme, ...rest }) => {
       ...rest
     };
 
-    return language ? <SyntaxHighlighter {...props} /> : <code>{ children }</code>;
+    return <SyntaxHighlighter {...props} />;
   };
 
   Code.propTypes = {
