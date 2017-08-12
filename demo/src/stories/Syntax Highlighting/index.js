@@ -10,7 +10,7 @@ const syntax = {
   ],
   showLineNumbers: true,
   lineNumberStyle: { opacity: .5 },
-  theme: atomOneLight
+  theme: atomOneLight,
 }
 
 export default () => (
