@@ -7,13 +7,13 @@ export default ({ languages, theme, ...rest }) => {
   if (languages) {
     languages.forEach(language => {
       registerLanguage(language.name, language.syntax);
-    });
+    })
   }
 
   // Return new Code component to do the highlighting
   const Code = ({ className = '', children }) => {
-    const langClass = className.split('-')[1];
-    const language = langClass !== 'null' ? langClass : '';
+    const langClass = className.split('-')[1]
+    const language = langClass || undefined
 
     // Can pass through any props for syntax highlighting
     // https://github.com/conorhastings/react-syntax-highlighter
@@ -22,17 +22,15 @@ export default ({ languages, theme, ...rest }) => {
       children,
       style: theme,
       ...rest
-    };
+    }
 
-    console.log(language)
-
-    return language !== '' ? <SyntaxHighlighter {...props} /> : <code>{children}</code>;
-  };
+    return language ? <SyntaxHighlighter {...props} /> : <code>{children}</code>;
+  }
 
   Code.propTypes = {
     className: React.PropTypes.string,
     children: React.PropTypes.node
-  };
+  }
 
   return Code;
-};
+}

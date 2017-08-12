@@ -5223,20 +5223,20 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-show@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-show/-/react-show-0.4.0.tgz#c9db3803d1e2a1b734a89fb3cca2ce5c2f4f66f5"
+react-show@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/react-show/-/react-show-0.4.2.tgz#956ae9d4272b0813e9851814bee2bf46b202b3f8"
   dependencies:
     markdown-to-jsx "^5.4.2"
     react-interface "^0.1.1"
     react-router-dom "^4.1.2"
-    react-smackdown "^0.4.0"
+    react-smackdown "^0.4.1"
     react-syntax-highlighter "^5.6.2"
     styled-components "^2.1.2"
 
-react-smackdown@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-smackdown/-/react-smackdown-0.4.0.tgz#ea4bb0b1ce2fcbc4ef126f7c9bcdb9a8fca57664"
+react-smackdown@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-smackdown/-/react-smackdown-0.4.1.tgz#7f4623f31e426064e4341f5e9326a68227909176"
   dependencies:
     markdown-to-jsx "^5.4.2"
     react-syntax-highlighter "^5.6.2"
