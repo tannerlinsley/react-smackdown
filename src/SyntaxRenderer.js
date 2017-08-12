@@ -13,7 +13,11 @@ export default ({ languages, theme, ...rest }) => {
   // Return new Code component to do the highlighting
   const Code = ({ className = '', children }) => {
     const langClass = className.split('-')[1]
-    const language = langClass || undefined
+    const language = langClass !== 'null'
+      ? langClass
+        ? langClass
+        : null
+      : ''
 
     // Can pass through any props for syntax highlighting
     // https://github.com/conorhastings/react-syntax-highlighter
