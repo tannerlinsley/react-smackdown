@@ -1,16 +1,9 @@
-### demo.md
-```javascript
-function hello() {
-  return 'hello!'
-}
-```
-
 ### index.js
 ```javascript
 import React from 'react'
 import { javascript } from 'react-syntax-highlighter/dist/languages'
-import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
-import Markdown from '../../../../src'
+import { atomOneDark } from 'react-syntax-highlighter/dist/styles'
+import Markdown from '../../../../../src'
 import md from './demo.md'
 
 const syntax = {
@@ -19,7 +12,7 @@ const syntax = {
   ],
   showLineNumbers: true,
   lineNumberStyle: { opacity: .5 },
-  theme: atomOneLight
+  theme: atomOneDark,
 }
 
 export default () => (

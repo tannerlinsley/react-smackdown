@@ -1,7 +1,7 @@
 import React from 'react'
-import { javascript, ruby, sql, elixir, json } from 'react-syntax-highlighter/dist/languages'
+import { javascript } from 'react-syntax-highlighter/dist/languages'
 import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
-import Markdown from '../../../../src'
+import Markdown from '../../../../../src'
 import md from './demo.md'
 
 const syntax = {

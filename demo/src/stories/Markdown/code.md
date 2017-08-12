@@ -13,8 +13,6 @@ Under the hood `react-smackdown` uses `markdown-to-jsx` which supports github fl
 ## Table of Contents
 - [Installation](#installation)
 - [Quick Example](#quick-example)
-- [Examples](https://react-charts.js.org)
-
 
 ## Installation
 ```bash
