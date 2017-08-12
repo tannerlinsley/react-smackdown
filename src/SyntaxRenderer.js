@@ -3,9 +3,12 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/di
 
 export default ({ languages, theme, ...rest }) => {
   // Register required languages through lowlight
-  languages.forEach(language => {
-    registerLanguage(language.name, language.syntax);
-  });
+
+  if (languages) {
+    languages.forEach(language => {
+      registerLanguage(language.name, language.syntax);
+    });
+  }
 
   // Return new Code component to do the highlighting
   const Code = ({ className = '', children }) => {
@@ -21,7 +24,9 @@ export default ({ languages, theme, ...rest }) => {
       ...rest
     };
 
-    return <SyntaxHighlighter {...props} />;
+    console.log(language)
+
+    return language !== '' ? <SyntaxHighlighter {...props} /> : <code>{children}</code>;
   };
 
   Code.propTypes = {

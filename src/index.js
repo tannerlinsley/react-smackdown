@@ -8,7 +8,7 @@ import SyntaxRenderer from './SyntaxRenderer'
 const Markdown = ({
   source,
   overrides,
-  syntax
+  syntax = {}
 }) => (
   <MarkdownRender
     options={{

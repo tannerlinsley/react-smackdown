@@ -1,31 +1,25 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { javascript, ruby, sql, elixir, json, bash } from 'react-syntax-highlighter/dist/languages'
-import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
-import Markdown from '../../src'
-import md from './demo.md'
+import { injectGlobal } from 'styled-components'
+import ReactShow, { makeStoriesFromFolders } from 'react-show'
 
-const syntax = {
-  languages: [
-    { name: 'javascript', syntax: javascript },
-    { name: 'ruby', syntax: ruby },
-    { name: 'sql', syntax: sql },
-    { name: 'elixir', syntax: elixir },
-    { name: 'json', syntax: json },
-    { name: 'bash', syntax: bash }
-  ],
-  showLineNumbers: true,
-  lineNumberStyle: { opacity: .5 },
-  theme: atomOneLight
-}
+const jsReq = require.context('./stories', true, /\index.js$/)
+const mdReq = require.context('./stories', true, /code\.md$/)
+const stories = makeStoriesFromFolders(jsReq, mdReq)
+
+injectGlobal`
+  * { box-sizing: border-box; }
+  html, body, #demo {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+`
 
 class Demo extends Component {
   render() {
     return (
-      <Markdown
-        source={md}
-        syntax={syntax}
-      />
+      <ReactShow stories={stories} />
     )
   }
 }
