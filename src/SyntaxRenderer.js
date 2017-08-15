@@ -25,6 +25,7 @@ export default ({ languages, theme, ...rest }) => {
       language,
       children,
       style: theme,
+      className: `syntax-${language}`,
       ...rest
     }
 
