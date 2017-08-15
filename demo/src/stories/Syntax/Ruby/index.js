@@ -1,6 +1,6 @@
 import React from 'react'
-import { ruby } from 'react-syntax-highlighter/dist/languages'
-import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
+import { ruby } from '../../../../../src/languages'
+import { atomOneLight } from '../../../../../src/themes'
 import Markdown from '../../../../../src'
 import md from './demo.md'
 
@@ -10,7 +10,7 @@ const syntax = {
   ],
   showLineNumbers: true,
   lineNumberStyle: { opacity: .5 },
-  theme: atomOneLight,
+  theme: atomOneLight
 }
 
 export default () => (
