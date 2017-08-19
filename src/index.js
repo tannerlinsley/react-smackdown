@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import MarkdownRender from 'markdown-to-jsx'
 import SyntaxRenderer from './SyntaxRenderer'
 
@@ -23,5 +24,14 @@ const Markdown = ({
     {source}
   </MarkdownRender>
 )
+
+Markdown.propTypes = {
+  /** The markdown to be rendered */
+  source: PropTypes.string.isRequired,
+  /** The syntax configuration */
+  syntax: PropTypes.object,
+  /** Markdown component overrides */
+  overrides: PropTypes.object
+}
 
 export default Markdown
