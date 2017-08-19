@@ -3,5 +3,7 @@ import Syntax from './Syntax'
 import Themes from './Themes'
 
 export default [
-  Markdown
+  Markdown,
+  Syntax,
+  Themes
 ]

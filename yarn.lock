@@ -5246,9 +5246,9 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-show@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/react-show/-/react-show-0.6.0.tgz#b103f787d3c34487204c5e179cfffc21f619702b"
+react-show@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/react-show/-/react-show-0.6.2.tgz#58c865df62d634f739712f0944469d72043074c9"
   dependencies:
     react-docgen "^2.17.0"
     react-interface "^0.1.1"

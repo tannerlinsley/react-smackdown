@@ -1,21 +1,35 @@
 import React from 'react'
-import { elixir } from 'react-syntax-highlighter/dist/languages'
+import { Demo } from 'react-show'
+import { javascript } from 'react-syntax-highlighter/dist/languages'
 import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
 import Markdown from '../../../../../src'
 import md from './demo.md'
+import code from './code.md'
 
 const syntax = {
   languages: [
-    { name: 'elixir', syntax: elixir }
+    { name: 'javascript', syntax: javascript }
   ],
   showLineNumbers: true,
   lineNumberStyle: { opacity: .5 },
   theme: atomOneLight,
 }
 
-export default () => (
-  <Markdown
-    source={md}
-    syntax={syntax}
-  />
+
+const atomOneLightDemo = () => (
+  <Demo
+    name="Atom One Dark Demo"
+    desc="Atom One Dark theme example"
+    code={code}
+  >
+    <Markdown
+      source={md}
+      syntax={syntax}
+    />
+  </Demo>
 )
+
+export default {
+  name: 'Atom One Light',
+  component: atomOneLightDemo
+}

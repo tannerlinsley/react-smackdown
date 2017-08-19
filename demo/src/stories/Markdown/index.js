@@ -6,6 +6,10 @@ import md from './example.md'
 import code from './code.md'
 
 import Headers from './Headers'
+import Emphasis from './Emphasis'
+import Links from './Links'
+import Quotes from './Quotes'
+import Tables from './Tables'
 
 
 const MarkdownDemo = () => (
@@ -31,5 +35,5 @@ const Story = () => (
 export default {
   name: 'Markdown',
   component: Story,
-  children: [Headers]
+  children: [Headers, Emphasis, Links, Quotes, Tables]
 }
