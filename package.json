@@ -1,6 +1,6 @@
 {
   "name": "react-smackdown",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "react-smackdown React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -30,7 +30,7 @@
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-show": "^0.4.4"
+    "react-show": "^0.6.2"
   },
   "author": "",
   "homepage": "",

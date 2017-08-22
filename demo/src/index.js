@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { injectGlobal } from 'styled-components'
-import ReactShow, { makeStoriesFromFolders } from 'react-show'
-
-const jsReq = require.context('./stories', true, /\index.js$/)
-const mdReq = require.context('./stories', true, /code\.md$/)
-const stories = makeStoriesFromFolders(jsReq, mdReq)
+import ReactShow from 'react-show'
+import stories from './stories'
 
 injectGlobal`
   * { box-sizing: border-box; }
