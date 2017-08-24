@@ -1,5 +1,5 @@
 import React from 'react'
-import { Demo } from 'react-show'
+import { Story, Demo } from 'react-story'
 import { ruby } from 'react-syntax-highlighter/dist/languages'
 import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
 import Markdown from '../../../../../src'
@@ -17,16 +17,18 @@ const syntax = {
 
 
 const rubyDemo = () => (
-  <Demo
-    name="Ruby Demo"
-    desc="Syntax highlighting for ruby"
-    code={code}
-  >
-    <Markdown
-      source={md}
-      syntax={syntax}
-    />
-  </Demo>
+  <Story>
+    <Demo
+      name="Ruby Demo"
+      desc="Syntax highlighting for ruby"
+      code={code}
+    >
+      <Markdown
+        source={md}
+        syntax={syntax}
+      />
+    </Demo>
+  </Story>
 )
 
 export default {

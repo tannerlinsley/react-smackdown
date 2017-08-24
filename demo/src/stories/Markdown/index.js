@@ -1,5 +1,5 @@
 import React from 'react'
-import { Demo, PropsTable } from 'react-show'
+import { Story, Demo, PropsTable } from 'react-story'
 import Markdown from '../../../../src'
 import MarkdownRaw from '!raw-loader!../../../../src'
 import md from './example.md'
@@ -22,18 +22,18 @@ const MarkdownDemo = () => (
   </Demo>
 )
 
-const Story = () => (
-  <div>
+const StoryComponent = () => (
+  <Story>
     <MarkdownDemo />
     <PropsTable
       demonstrating={Markdown}
       raw={MarkdownRaw}
     />
-  </div>
+  </Story>
 )
 
 export default {
   name: 'Markdown',
-  component: Story,
+  component: StoryComponent,
   children: [Headers, Emphasis, Links, Quotes, Tables]
 }

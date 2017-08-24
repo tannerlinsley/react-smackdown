@@ -30,7 +30,7 @@
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-show": "^0.6.2"
+    "react-story": "^1.0.1"
   },
   "author": "",
   "homepage": "",

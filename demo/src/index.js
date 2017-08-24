@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { injectGlobal } from 'styled-components'
-import ReactShow from 'react-show'
+import ReactShow from 'react-story'
 import stories from './stories'
 
 injectGlobal`

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Demo } from 'react-show'
+import { Story, Demo } from 'react-story'
 import { javascript } from 'react-syntax-highlighter/dist/languages'
 import { atomOneDark } from 'react-syntax-highlighter/dist/styles'
 import Markdown from '../../../../../src'
@@ -15,18 +15,19 @@ const syntax = {
   theme: atomOneDark,
 }
 
-
 const AtomOneDarkDemo = () => (
-  <Demo
-    name="Atom One Dark Demo"
-    desc="Atom One Dark theme example"
-    code={code}
-  >
-    <Markdown
-      source={md}
-      syntax={syntax}
-    />
-  </Demo>
+  <Story>
+    <Demo
+      name="Atom One Dark Demo"
+      desc="Atom One Dark theme example"
+      code={code}
+    >
+      <Markdown
+        source={md}
+        syntax={syntax}
+      />
+    </Demo>
+  </Story>
 )
 
 export default {

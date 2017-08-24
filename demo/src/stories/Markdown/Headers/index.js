@@ -1,17 +1,19 @@
 import React from 'react'
-import { Demo } from 'react-show'
+import { Story, Demo } from 'react-story'
 import Markdown from '../../../../../src'
 import md from './demo.md'
 import code from './code.md'
 
 const HeadersDemo = () => (
-  <Demo
-    name="Headers Demo"
-    desc="Render markdown headers"
-    code={code}
-  >
-    <Markdown source={md} />
-  </Demo>
+  <Story>
+    <Demo
+      name="Headers Demo"
+      desc="Render markdown headers"
+      code={code}
+    >
+      <Markdown source={md} />
+    </Demo>
+  </Story>
 )
 
 export default {

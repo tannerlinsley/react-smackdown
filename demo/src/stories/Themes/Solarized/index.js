@@ -1,6 +1,6 @@
 import React from 'react'
-import { Demo } from 'react-show'
-import { javascript } from 'react-syntax-highlighter/dist/languages'
+import { Story, Demo } from 'react-story'
+import { ruby } from 'react-syntax-highlighter/dist/languages'
 import { solarizedDark } from 'react-syntax-highlighter/dist/styles'
 import Markdown from '../../../../../src'
 import md from './demo.md'
@@ -8,7 +8,7 @@ import code from './code.md'
 
 const syntax = {
   languages: [
-    { name: 'javascript', syntax: javascript }
+    { name: 'ruby', syntax: ruby }
   ],
   showLineNumbers: true,
   lineNumberStyle: { opacity: .5 },
@@ -17,16 +17,18 @@ const syntax = {
 
 
 const solarizedDemo = () => (
-  <Demo
-    name="Solarized Demo"
-    desc="Solarized theme example"
-    code={code}
-  >
-    <Markdown
-      source={md}
-      syntax={syntax}
-    />
-  </Demo>
+  <Story>
+    <Demo
+      name="Solarized Demo"
+      desc="Solarized theme example"
+      code={code}
+    >
+      <Markdown
+        source={md}
+        syntax={syntax}
+      />
+    </Demo>
+  </Story>
 )
 
 export default {
