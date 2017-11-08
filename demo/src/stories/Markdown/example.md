@@ -15,7 +15,7 @@ Under the hood `react-smackdown` uses `markdown-to-jsx` which supports github fl
 - [Quick Example](#quick-example)
 
 ## Installation
-```bash
+```
 $ yarn add react-smackdown
 ```
 

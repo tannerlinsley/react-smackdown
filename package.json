@@ -24,14 +24,15 @@
     "react-syntax-highlighter": "^5.6.3"
   },
   "peerDependencies": {
-    "react": "15.x"
+    "react": ">=15"
   },
   "devDependencies": {
-    "nwb": "0.18.x",
+    "nwb": "^0.19.1",
+    "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-story": "^1.0.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-story": "^1.4.1"
   },
   "author": "",
   "homepage": "",
