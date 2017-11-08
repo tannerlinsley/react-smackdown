@@ -210,10 +210,6 @@ ast-types@0.9.11:
   version "0.9.11"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.9.11.tgz#371177bb59232ff5ceaa1d09ee5cad705b1a5aa9"
 
-ast-types@0.9.6:
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.9.6.tgz#102c9e9e9005d3e7e3829bf0c4fa24ee862ee9b9"
-
 async-each@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
@@ -2293,13 +2289,6 @@ es6-symbol@3.1.1, es6-symbol@^3.1, es6-symbol@^3.1.1, es6-symbol@~3.1, es6-symbo
     d "1"
     es5-ext "~0.10.14"
 
-es6-templates@^0.2.2:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/es6-templates/-/es6-templates-0.2.3.tgz#5cb9ac9fb1ded6eb1239342b81d792bbb4078ee4"
-  dependencies:
-    recast "~0.11.12"
-    through "~2.3.6"
-
 es6-weak-map@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/es6-weak-map/-/es6-weak-map-2.0.2.tgz#5e3ab32251ffd1538a1f8e5ffa1357772f92d96f"
@@ -2344,10 +2333,6 @@ esprima@2.7.x, esprima@^2.6.0, esprima@^2.7.1:
 esprima@^4.0.0, esprima@~4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
-
-esprima@~3.1.0:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
 
 esrecurse@^4.1.0:
   version "4.2.0"
@@ -3008,17 +2993,7 @@ html-entities@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
 
-html-loader@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/html-loader/-/html-loader-0.5.1.tgz#4f1e8396a1ea6ab42bedc987dfac058070861ebe"
-  dependencies:
-    es6-templates "^0.2.2"
-    fastparse "^1.1.1"
-    html-minifier "^3.0.1"
-    loader-utils "^1.0.2"
-    object-assign "^4.1.0"
-
-html-minifier@^3.0.1, html-minifier@^3.2.3:
+html-minifier@^3.2.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.5.3.tgz#4a275e3b1a16639abb79b4c11191ff0d0fcf1ab9"
   dependencies:
@@ -3936,13 +3911,6 @@ make-dir@^1.0.0:
 map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
-
-markdown-loader@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/markdown-loader/-/markdown-loader-2.0.1.tgz#eed8bead82978bacf17b76a11c5593a013e2d976"
-  dependencies:
-    loader-utils "^1.1.0"
-    marked "^0.3.6"
 
 marked@^0.3.6:
   version "0.3.6"
@@ -5235,21 +5203,17 @@ react-html-parser@^2.0.0:
   dependencies:
     htmlparser2 "^3.9.0"
 
-react-interface@^0.5.0:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/react-interface/-/react-interface-0.5.1.tgz#946aa8a7c71c1ef2371bf5ba904db713f079db3f"
+react-interface@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/react-interface/-/react-interface-0.6.1.tgz#8aff892e596e51627ddc888d3230bdda3b18643c"
   dependencies:
     chroma-js "^1.3.4"
     color "^2.0.0"
     deepmerge "^2.0.0"
     grid-styled "^2.0.0-11"
-    html-loader "^0.5.1"
     hue-name "^1.0.0-b0"
-    markdown-loader "^2.0.1"
     palx "^1.0.2"
-    raw-loader "^0.5.1"
     react-feather "^1.0.7"
-    react-story "^1.3.0"
     styled-components "^2.2.1"
     styled-system "^1.0.7"
 
@@ -5291,13 +5255,13 @@ react-smackdown@^0.6.4:
     react-html-parser "^2.0.0"
     react-syntax-highlighter "^5.6.3"
 
-react-story@^1.3.0, react-story@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/react-story/-/react-story-1.4.1.tgz#2e3b989a5c3b1919dd2c36f1a0ae5c2ec33f4783"
+react-story@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/react-story/-/react-story-1.4.4.tgz#4c43baa17d3dc2925e92cd4ebcaafae91d0b6530"
   dependencies:
     react-docgen next
     react-docgen-annotation-resolver "^1.0.0"
-    react-interface "^0.5.0"
+    react-interface "^0.6.1"
     react-router-dom "^4.2.2"
     react-smackdown "^0.6.4"
     styled-components "^2.2.1"
@@ -5397,15 +5361,6 @@ recast@^0.12.6:
     ast-types "0.9.11"
     core-js "^2.4.1"
     esprima "~4.0.0"
-    private "~0.1.5"
-    source-map "~0.5.0"
-
-recast@~0.11.12:
-  version "0.11.23"
-  resolved "https://registry.yarnpkg.com/recast/-/recast-0.11.23.tgz#451fd3004ab1e4df9b4e4b66376b2a21912462d3"
-  dependencies:
-    ast-types "0.9.6"
-    esprima "~3.1.0"
     private "~0.1.5"
     source-map "~0.5.0"
 
@@ -6151,7 +6106,7 @@ through2@^2.0.0, through2@~2.0.0:
     readable-stream "^2.1.5"
     xtend "~4.0.1"
 
-through@^2.3.6, through@~2.3.6:
+through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
