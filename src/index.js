@@ -33,7 +33,7 @@ const Markdown = ({ source, components = {}, syntax = {}, ...rest }) => {
     if (node.type === 'tag' && components[node.name]) {
       return React.createElement(
         components[node.name],
-        generatePropsFromAttributes(node.attribs, index),
+        {...rest, ...generatePropsFromAttributes(node.attribs, index)},
         processNodes(node.children, transform)
       )
     }
