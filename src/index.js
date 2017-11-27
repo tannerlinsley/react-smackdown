@@ -17,6 +17,7 @@ const Markdown = ({ source, components = {}, syntax = {}, ...rest }) => {
   const Code = SyntaxRenderer(syntax)
 
   const transform = (node, index) => {
+    console.log(node)
     // Transform any code usin the syntax renderer
     if (node.type === 'tag' && node.name === 'code') {
       const el = convertNodeToElement(node, index, transform)

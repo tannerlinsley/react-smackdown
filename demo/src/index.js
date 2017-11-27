@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { injectGlobal } from 'styled-components'
-import ReactShow from 'react-story'
+import ReactStory from 'react-story'
 import stories from './stories'
 
 injectGlobal`
@@ -13,10 +13,12 @@ injectGlobal`
   }
 `
 
+console.log(stories)
+
 class Demo extends Component {
   render() {
     return (
-      <ReactShow stories={stories} />
+      <ReactStory stories={stories} />
     )
   }
 }

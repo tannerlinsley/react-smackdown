@@ -28,10 +28,6 @@ const MarkdownDemo = () =>
 const StoryComponent = () =>
   <Story>
     <MarkdownDemo />
-    {/* <PropsTable
-      demonstrating={Markdown}
-      raw={MarkdownRaw}
-    /> */}
   </Story>
 
 export default {

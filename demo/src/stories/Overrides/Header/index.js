@@ -6,6 +6,8 @@ import code from './code.md'
 
 const CustomHeader = ({ children }) => <b style={{ color: 'green' }}>{children}</b>
 
+const CustomWarning = ({ children }) => <p>warning: {children}</p>
+
 const HeaderDemo = () => (
   <Story>
     <Demo
@@ -16,7 +18,8 @@ const HeaderDemo = () => (
       <Markdown
         source={md}
         components={{
-          h1: CustomHeader
+          h1: CustomHeader,
+          warning: CustomWarning
         }}
       />
     </Demo>
