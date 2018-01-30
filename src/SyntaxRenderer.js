@@ -4,7 +4,6 @@ import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/di
 
 export default ({ languages, theme, ...rest }) => {
   // Register required languages through lowlight
-
   if (languages) {
     languages.forEach(language => {
       registerLanguage(language.name, language.syntax)

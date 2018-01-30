@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import MarkdownToJSX from 'markdown-to-jsx'
-//
 import SyntaxRenderer from './SyntaxRenderer'
 
 // See https://github.com/isagalaev/highlight.js/tree/master/src/languages
@@ -15,8 +14,7 @@ import SyntaxRenderer from './SyntaxRenderer'
 
 const Markdown = ({
   source,
-  // components = {},
-  overrides = {},
+  renderers = {},
   syntax = {},
   ...rest
 }) => {
@@ -28,13 +26,16 @@ const Markdown = ({
       code: {
         component: Code,
       },
-      ...overrides,
+      ...renderers,
     },
+    ...rest,
   }
 
   return (
-    <div {...rest}>
-      <MarkdownToJSX options={markdownOptions} children={source} />
+    <div className="react-smackdown">
+      <MarkdownToJSX options={markdownOptions}>
+        {source}
+      </MarkdownToJSX>
     </div>
   )
 }

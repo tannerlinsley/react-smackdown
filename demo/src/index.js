@@ -1,32 +1,21 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { injectGlobal } from 'styled-components'
-// import ReactStory from 'react-story'
-// import stories from './stories'
 
 import RubyStory from './stories/Syntax/Ruby'
-
-injectGlobal`
-  * { box-sizing: border-box; }
-  html, body, #demo {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-  }
-`
+import HeaderStory from './stories/Overrides/Header'
 
 class Demo extends Component {
   render () {
-    return <RubyStory />
+    return (
+      <div>
+        <h2>Ruby Example:</h2>
+        <RubyStory />
+
+        <h2>Override Header Example</h2>
+        <HeaderStory />
+      </div>
+    )
   }
 }
-
-// class Demo extends Component {
-//   render() {
-//     return (
-//       <ReactStory stories={stories} />
-//     )
-//   }
-// }
 
 render(<Demo />, document.querySelector('#demo'))
