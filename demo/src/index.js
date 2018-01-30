@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { injectGlobal } from 'styled-components'
-import ReactStory from 'react-story'
-import stories from './stories'
+// import ReactStory from 'react-story'
+// import stories from './stories'
+
+import RubyStory from './stories/Syntax/Ruby'
 
 injectGlobal`
   * { box-sizing: border-box; }
@@ -13,14 +15,18 @@ injectGlobal`
   }
 `
 
-console.log(stories)
-
 class Demo extends Component {
-  render() {
-    return (
-      <ReactStory stories={stories} />
-    )
+  render () {
+    return <RubyStory />
   }
 }
 
-render(<Demo/>, document.querySelector('#demo'))
+// class Demo extends Component {
+//   render() {
+//     return (
+//       <ReactStory stories={stories} />
+//     )
+//   }
+// }
+
+render(<Demo />, document.querySelector('#demo'))

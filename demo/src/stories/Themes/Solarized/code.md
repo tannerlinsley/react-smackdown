@@ -1,8 +1,8 @@
 ### index.js
 ```javascript
 import React from 'react'
-import { ruby } from 'react-syntax-highlighter/dist/languages'
-import { solarizedDark } from 'react-syntax-highlighter/dist/styles'
+import { ruby } from 'react-syntax-highlighter/dist/languages/hljs'
+import { solarizedDark } from 'react-syntax-highlighter/dist/styles/hljs'
 import Markdown from '../../../../../src'
 import md from './demo.md'
 

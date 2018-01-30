@@ -1,7 +1,7 @@
 ```javascript
 import React from 'react'
-import { elixir } from 'react-syntax-highlighter/dist/languages'
-import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
+import { elixir } from 'react-syntax-highlighter/dist/languages/hljs'
+import { atomOneLight } from 'react-syntax-highlighter/dist/styles/hljs'
 import Markdown from '../../../../../src'
 import md from './demo.md'
 

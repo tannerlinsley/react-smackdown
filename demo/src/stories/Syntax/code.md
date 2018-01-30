@@ -6,8 +6,8 @@ Under the hood `react-smackdown` uses `react-syntax-highlighter` which supports 
 ```javascript
 import React from 'react'
 import Markdown from 'react-smackdown'
-import { javascript, ruby, sql, elixir, json } from 'react-syntax-highlighter/dist/languages'
-import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
+import { javascript, ruby, sql, elixir, json } from 'react-syntax-highlighter/dist/languages/hljs'
+import { atomOneLight } from 'react-syntax-highlighter/dist/styles/hljs'
 import md from './demo.md'
 
 const syntax = {

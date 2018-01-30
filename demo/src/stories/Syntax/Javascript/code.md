@@ -1,8 +1,8 @@
 ### index.js
 ```javascript
 import React from 'react'
-import { javascript } from 'react-syntax-highlighter/dist/languages'
-import { atomOneLight } from 'react-syntax-highlighter/dist/styles'
+import { javascript } from 'react-syntax-highlighter/dist/languages/hljs'
+import { atomOneLight } from 'react-syntax-highlighter/dist/styles/hljs'
 import Markdown from '../../../../../src'
 import md from './demo.md'
 

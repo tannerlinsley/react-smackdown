@@ -18,8 +18,8 @@ Usage:
 
 ```javascript
   import Smackdown from 'smackdown'
-  import { javascript } from 'react-syntax-highlighter/dist/languages/hljs'
-  import { atomOneLight } from 'react-syntax-highlighter/dist/styles/hljs'
+  import { javascript } from 'react-syntax-highlighter/dist/languages/hljs/hljs'
+  import { atomOneLight } from 'react-syntax-highlighter/dist/styles/hljs/hljs'
   import md from './markdown.md'
 
   const syntax = {

@@ -34,7 +34,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-smackdown": "^0.7.0",
-    "react-story": "1.4.4",
+    "styled-components": "^3.1.4",
     "webpack-bundle-analyzer": "^2.9.2"
   },
   "author": "",
