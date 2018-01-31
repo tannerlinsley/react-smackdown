@@ -1,6 +1,6 @@
 {
   "name": "react-smackdown",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "react-smackdown React component",
   "main": "lib/index.js",
   "files": [
