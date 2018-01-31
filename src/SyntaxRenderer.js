@@ -1,17 +1,29 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light'
 
-export default ({ languages, theme, ...rest }) => {
-  // Register required languages through lowlight
-  if (languages) {
-    languages.forEach(language => {
-      registerLanguage(language.name, language.syntax)
+export default class SyntaxRenderer extends React.Component {
+  state = {
+    ready: false,
+  }
+  componentDidMount () {
+    const { languages } = this.props
+    // Register required languages through lowlight
+    if (languages) {
+      languages.forEach(language => {
+        registerLanguage(language.name, language.syntax)
+      })
+    }
+    this.ready()
+  }
+  ready = () => {
+    this.setState({
+      ready: true,
     })
   }
+  render () {
+    const { languages, theme, className, children, ...rest } = this.props
+    const { ready } = this.state
 
-  // Return new Code component to do the highlighting
-  const Code = ({ className = '', children }) => {
     const langClass = className.split('-')[1]
     const language = langClass !== 'null' ? langClass || null : ''
 
@@ -25,13 +37,6 @@ export default ({ languages, theme, ...rest }) => {
       ...rest,
     }
 
-    return language ? <SyntaxHighlighter {...props} /> : <code>{children}</code>
+    return ready && language ? <SyntaxHighlighter {...props} /> : <code>{children}</code>
   }
-
-  Code.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node,
-  }
-
-  return Code
 }

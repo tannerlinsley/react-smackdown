@@ -12,14 +12,12 @@ import SyntaxRenderer from './SyntaxRenderer'
 // 3. Front Matter extractor
 // 4. Menu Builder
 
-const Markdown = ({
-  source,
-  renderers = {},
-  syntax = {},
-  ...rest
-}) => {
+const Markdown = ({ source, renderers = {}, syntax = {}, ...rest }) => {
   // Get the syntax renderer
-  const Code = SyntaxRenderer(syntax)
+  // console.log(syntax)
+  const Code = props => (
+    <SyntaxRenderer {...props} languages={syntax.languages} theme={syntax.theme} />
+  )
 
   const markdownOptions = {
     overrides: {
@@ -33,9 +31,7 @@ const Markdown = ({
 
   return (
     <div className="react-smackdown">
-      <MarkdownToJSX options={markdownOptions}>
-        {source}
-      </MarkdownToJSX>
+      <MarkdownToJSX options={markdownOptions}>{source}</MarkdownToJSX>
     </div>
   )
 }
