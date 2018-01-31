@@ -21,7 +21,7 @@ export default class SyntaxRenderer extends React.Component {
     })
   }
   render () {
-    const { languages, theme, className, children, ...rest } = this.props
+    const { languages, theme, className = '', children, ...rest } = this.props
     const { ready } = this.state
 
     const langClass = className.split('-')[1]
