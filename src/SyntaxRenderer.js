@@ -1,5 +1,12 @@
 import React from 'react'
-import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/dist/light'
+
+let SyntaxHighlighter = () => null
+let registerLanguage = () => {}
+if (typeof document !== 'undefined') {
+  const imported = require('react-syntax-highlighter/dist/light')
+  SyntaxHighlighter = imported.default
+  registerLanguage = imported.registerLanguage
+}
 
 export default class SyntaxRenderer extends React.Component {
   state = {

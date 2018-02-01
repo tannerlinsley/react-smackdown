@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MarkdownToJSX from 'markdown-to-jsx'
+import marked from 'marked'
+import ReactHtmlParser, { convertNodeToElement, processNodes } from 'react-html-parser'
+import generatePropsFromAttributes from 'react-html-parser/lib/utils/generatePropsFromAttributes'
 import SyntaxRenderer from './SyntaxRenderer'
 
 // See https://github.com/isagalaev/highlight.js/tree/master/src/languages
@@ -12,26 +14,49 @@ import SyntaxRenderer from './SyntaxRenderer'
 // 3. Front Matter extractor
 // 4. Menu Builder
 
-const Markdown = ({ source, renderers = {}, syntax = {}, ...rest }) => {
+const Markdown = ({ source, renderers = {}, syntax = {}, style, className, ...rest }) => {
   // Get the syntax renderer
   // console.log(syntax)
   const Code = props => (
     <SyntaxRenderer {...props} languages={syntax.languages} theme={syntax.theme} />
   )
 
-  const markdownOptions = {
-    overrides: {
-      code: {
-        component: Code,
-      },
-      ...renderers,
+  const finalRenderers = {
+    code: {
+      component: Code,
     },
-    ...rest,
+    ...renderers,
+  }
+
+  const transform = (node, index) => {
+    // Transform any code usin the syntax renderer
+    if (node.type === 'tag' && node.name === 'code') {
+      convertNodeToElement(node, index, transform)
+      return React.createElement(
+        Code,
+        {
+          className: node.attribs.class, // Its a shame these aren't react attrs :(
+          key: index,
+        },
+        node.children[0].data
+      )
+    }
+    // Transform any component renderers as react components
+    if (node.type === 'tag' && finalRenderers[node.name]) {
+      return React.createElement(
+        finalRenderers[node.name],
+        generatePropsFromAttributes(node.attribs, index),
+        processNodes(node.children, transform)
+      )
+    }
   }
 
   return (
-    <div className="react-smackdown">
-      <MarkdownToJSX options={markdownOptions}>{source}</MarkdownToJSX>
+    <div {...{ style, className }}>
+      {ReactHtmlParser(marked(source), {
+        transform,
+        ...rest,
+      })}
     </div>
   )
 }

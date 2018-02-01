@@ -31,8 +31,23 @@ Usage:
     theme: atomOneLight
   }
 
+  const overrides = {
+    a: props => <Link {...props} />,
+  }
+
   <Smackdown
     source={md}
     syntax={syntax}
   />
+```
+
+Using the markdown compiler directly:
+
+```javascript
+  import { compiler } from 'smackdown'
+  import md from './markdown.md'
+
+  const options = {...}
+
+  const html = compiler(md, options)
 ```
