@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import marked from 'marked'
 import ReactHtmlParser, { convertNodeToElement, processNodes } from 'react-html-parser'
 import generatePropsFromAttributes from 'react-html-parser/lib/utils/generatePropsFromAttributes'
+//
 import SyntaxRenderer from './SyntaxRenderer'
+import compiler from './compiler'
 
 // See https://github.com/isagalaev/highlight.js/tree/master/src/languages
 // for all language options and https://github.com/isagalaev/highlight.js/tree/master/src/styles
@@ -14,12 +15,17 @@ import SyntaxRenderer from './SyntaxRenderer'
 // 3. Front Matter extractor
 // 4. Menu Builder
 
-const Markdown = ({ source, renderers = {}, syntax = {}, style, className, ...rest }) => {
+export default function Smackdown ({
+  source,
+  renderers = {},
+  syntax = {},
+  style,
+  className,
+  ...rest
+}) {
   // Get the syntax renderer
   // console.log(syntax)
-  const Code = props => (
-    <SyntaxRenderer {...props} languages={syntax.languages} theme={syntax.theme} />
-  )
+  const Code = props => <SyntaxRenderer {...props} {...syntax} />
 
   const finalRenderers = {
     code: {
@@ -38,7 +44,7 @@ const Markdown = ({ source, renderers = {}, syntax = {}, style, className, ...re
           className: node.attribs.class, // Its a shame these aren't react attrs :(
           key: index,
         },
-        node.children[0].data
+        node.children && node.children[0] && node.children[0].data ? node.children[0].data : null
       )
     }
     // Transform any component renderers as react components
@@ -53,7 +59,7 @@ const Markdown = ({ source, renderers = {}, syntax = {}, style, className, ...re
 
   return (
     <div {...{ style, className }}>
-      {ReactHtmlParser(marked(source), {
+      {ReactHtmlParser(compiler.makeHtml(source), {
         transform,
         ...rest,
       })}
@@ -61,7 +67,7 @@ const Markdown = ({ source, renderers = {}, syntax = {}, style, className, ...re
   )
 }
 
-Markdown.propTypes = {
+Smackdown.propTypes = {
   /** The markdown to be rendered */
   source: PropTypes.string.isRequired,
   /** The syntax configuration */
@@ -69,5 +75,3 @@ Markdown.propTypes = {
   /** Markdown component overrides */
   overrides: PropTypes.object,
 }
-
-export default Markdown

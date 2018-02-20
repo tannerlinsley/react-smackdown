@@ -1,5 +1,5 @@
-import Markdown from './Markdown'
+import Smackdown from './Smackdown'
+import compiler from './compiler'
 
-export { default as compiler } from 'marked'
-
-export default Markdown
+export { compiler }
+export default Smackdown
