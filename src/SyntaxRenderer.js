@@ -28,11 +28,11 @@ export default class SyntaxRenderer extends React.Component {
     })
   }
   render () {
-    const { languages, theme, className = '', children, ...rest } = this.props
+    const { languages, theme, className = '', isInPre, children, ...rest } = this.props
     const { ready } = this.state
 
     const langClass = className.split('-')[1]
-    const language = langClass !== 'null' ? langClass || null : ''
+    const language = langClass !== 'null' && langClass !== 'undefined' ? langClass : 'text'
 
     // Can pass through any props for syntax highlighting
     // https://github.com/conorhastings/react-syntax-highlighter
@@ -42,8 +42,9 @@ export default class SyntaxRenderer extends React.Component {
       style: theme,
       className: `syntax-${language}`,
       ...rest,
+      showLineNumbers: language ? rest.showLineNumbers : false,
     }
 
-    return ready && language ? <SyntaxHighlighter {...props} /> : <code>{children}</code>
+    return ready && isInPre ? <SyntaxHighlighter {...props} /> : <code>{children}</code>
   }
 }

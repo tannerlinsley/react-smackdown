@@ -25,35 +25,32 @@ export default function Smackdown ({
 }) {
   // Get the syntax renderer
   // console.log(syntax)
-  const Code = props => <SyntaxRenderer {...props} {...syntax} />
 
-  const finalRenderers = {
-    code: {
-      component: Code,
-    },
-    ...renderers,
-  }
+  const Syntax = props => <SyntaxRenderer {...props} {...syntax} />
 
   const transform = (node, index) => {
-    // Transform any code usin the syntax renderer
-    if (node.type === 'tag' && node.name === 'code') {
-      convertNodeToElement(node, index, transform)
-      return React.createElement(
-        Code,
-        {
-          className: node.attribs.class, // Its a shame these aren't react attrs :(
-          key: index,
-        },
-        node.children && node.children[0] && node.children[0].data ? node.children[0].data : null
-      )
-    }
     // Transform any component renderers as react components
-    if (node.type === 'tag' && finalRenderers[node.name]) {
-      return React.createElement(
-        finalRenderers[node.name],
-        generatePropsFromAttributes(node.attribs, index),
-        processNodes(node.children, transform)
-      )
+    if (node.type === 'tag' && renderers[node.name]) {
+      const Component = renderers[node.name]
+      const props = generatePropsFromAttributes(node.attribs, index)
+      const children = processNodes(node.children, transform)
+      return React.createElement(Component, props, children)
+    }
+    // Transform any code usin the syntax renderer
+    if (node.type === 'tag' && node.name === 'pre') {
+      if (node.children && node.children.length === 1 && node.children[0].name === 'code') {
+        node = node.children[0]
+        convertNodeToElement(node, index, transform)
+        const props = {
+          ...generatePropsFromAttributes(node.attribs, index),
+          isInPre: node.parent && node.parent.name === 'pre',
+        }
+        return React.createElement(
+          Syntax,
+          props,
+          node.children && node.children[0] && node.children[0].data ? node.children[0].data : null
+        )
+      }
     }
   }
 
