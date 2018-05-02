@@ -1,5 +1,5 @@
-import Smackdown from './Smackdown'
-import compiler from './compiler'
+import Markdown from './Markdown'
+import Code from './Code'
+import makeCompiler from './makeCompiler'
 
-export { compiler }
-export default Smackdown
+export { Markdown, Code, makeCompiler }

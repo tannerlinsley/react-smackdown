@@ -1,0 +1,155 @@
+/**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #cecece;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Inconsolata, Monaco, Consolas, "Courier New", Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+code[class*="language-javascript"],
+pre[class*="language-javascript"] {
+  color: #ff6673;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #22252c;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+
+.token.comment,
+.token.tag .token.comment,
+.token.prolog,
+.token.tag .token.prolog,
+.token.doctype,
+.token.tag .token.doctype,
+.token.cdata,
+.token.tag .token.cdata {
+  color: #8a8a8a;
+}
+
+.token.punctuation,
+.token.tag .token.punctuation {
+  color: #c8c8c5;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.keyword,
+.token.tag .token.keyword {
+  color: #c678dd;
+}
+
+.token.property,
+.token.tag .token.property,
+.token.atrule,
+.token.tag .token.atrule,
+.token.variable,
+.token.tag .token.variable,
+.token.attr,
+.token.tag .token.attr-value,
+.token.symbol,
+.token.tag .token.symbol,
+.token.deleted,
+.token.tag .token.deleted {
+  color: #ff6673;
+}
+
+.token.class,
+.token.tag .token.class-name,
+.token.attr,
+.token.tag .token.attr-name,
+.token.number,
+.token.tag .token.number,
+.token.important,
+.token.tag .token.important {
+  color: #ffa149;
+}
+
+.token.selector,
+.token.tag .token.selector,
+.token.string,
+.token.tag .token.string,
+.token.char,
+.token.tag .token.char,
+.token.builtin,
+.token.tag .token.builtin,
+.token.boolean,
+.token.tag .token.boolean,
+.token.constant,
+.token.tag .token.constant,
+.token.inserted,
+.token.tag .token.inserted {
+  color: #9ed875;
+}
+
+.token.operator,
+.token.tag .token.operator {
+  color: #42c5c5;
+}
+
+.token.url,
+.token.tag .token.url,
+.token.function,
+.token.tag .token.function {
+  color: #41b3ff;
+}
+
+.token.tag > * {
+  color: #ff6673;
+}
+
+.token.tag,
+.token.regex,
+.token.tag .token.regex,
+.token.entity,
+.token.tag .token.entity {
+  color: #ffd446;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
