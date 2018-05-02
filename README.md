@@ -1,6 +1,6 @@
-# react-smackdown
+# React Smackdown
 
-React-Smackdown is the easiest way to render markdown as html in React. With a single component and string of markdown, you get server-side-compatible JSX, complete with syntax highlighting.
+React Smackdown is the easiest way to render markdown as html in React. With a single component and string of markdown, you get server-side-compatible JSX, complete with syntax highlighting.
 
 ## Features
 
