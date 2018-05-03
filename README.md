@@ -125,6 +125,13 @@ const renderers = {
 
 If you don't need to render any markdown, but still want syntax highlighting, you can use the `<Code>` component directly!
 
+**Props**:
+
+* `source: String (Required)` - The code string you want to highlight and render
+* `language: String (Recommended)` - Defaults to `markup`. The `prismjs` language you want to use to highlight the source.
+* `component: String | Component` - Defaults to `pre` The component you want to use to render the outer element. Change this to `code` if you need to do inline rendering of code.
+* `showLineNumbers: Boolean` - Defaults to `true`
+
 ```javascript
 import { Code } from "smackdown";
 

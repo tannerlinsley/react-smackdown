@@ -71,7 +71,6 @@ export default class Markdown extends React.Component {
         } else if (highlightInline && node.name === 'code' && node.parent.name !== 'pre') {
           const codeNode = node.children[0]
           const generatedProps = generatePropsFromAttributes(node.attribs, index)
-          console.log(node)
           const props = {
             ...generatedProps,
             component: 'code',
