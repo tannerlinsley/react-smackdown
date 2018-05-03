@@ -1,48 +1,40 @@
 {
   "name": "react-smackdown",
-  "version": "0.8.8",
+  "version": "1.0.0-beta.0",
   "description": "react-smackdown React component",
   "main": "lib/index.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "files": ["css", "es", "lib", "umd"],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
-    "start": "nwb serve-react-demo",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "startDocs": "cd www && yarn start",
+    "buildDocs": "cd www && yarn build",
+    "serveDocs": "cd www && yarn serve",
+    "buildDocsProd": "cd www && yarn && yarn build"
   },
   "dependencies": {
+    "prismjs": "^1.14.0",
     "react-html-parser": "^2.0.2",
-    "react-syntax-highlighter": "^7.0.0",
     "showdown": "^1.8.6"
   },
   "peerDependencies": {
     "react": ">=15"
   },
   "devDependencies": {
-    "babel-plugin-codegen": "^1.2.1",
     "eslint-config-react-tools": "^1.1.2",
     "nwb": "^0.19.1",
     "prop-types": "^15.6.0",
-    "raw-loader": "^0.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-smackdown": "^0.7.0",
-    "styled-components": "^3.1.4",
-    "webpack-bundle-analyzer": "^2.9.2"
+    "styled-components": "^3.1.4"
   },
   "author": "",
   "homepage": "",
   "license": "MIT",
   "repository": "",
-  "keywords": [
-    "react-component"
-  ]
+  "keywords": ["react-component"]
 }
