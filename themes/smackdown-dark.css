@@ -26,11 +26,6 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-code[class*="language-javascript"],
-pre[class*="language-javascript"] {
-  color: #ff6673;
-}
-
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
@@ -51,18 +46,13 @@ pre[class*="language-"] {
 }
 
 .token.comment,
-.token.tag .token.comment,
 .token.prolog,
-.token.tag .token.prolog,
 .token.doctype,
-.token.tag .token.doctype,
-.token.cdata,
-.token.tag .token.cdata {
+.token.cdata {
   color: #8a8a8a;
 }
 
-.token.punctuation,
-.token.tag .token.punctuation {
+.token.punctuation {
   color: #c8c8c5;
 }
 
@@ -71,74 +61,45 @@ pre[class*="language-"] {
 }
 
 .token.keyword,
-.token.tag .token.keyword {
-  color: #c678dd;
-}
-
 .token.property,
-.token.tag .token.property,
 .token.atrule,
-.token.tag .token.atrule,
 .token.variable,
-.token.tag .token.variable,
-.token.attr,
-.token.tag .token.attr-value,
+.token.attr-value,
 .token.symbol,
-.token.tag .token.symbol,
-.token.deleted,
-.token.tag .token.deleted {
+.token.deleted {
   color: #ff6673;
 }
 
 .token.class,
-.token.tag .token.class-name,
 .token.attr,
-.token.tag .token.attr-name,
+.token.attr-name,
 .token.number,
-.token.tag .token.number,
-.token.important,
-.token.tag .token.important {
-  color: #ffa149;
+.token.important {
+  color: #ff8c49;
 }
 
 .token.selector,
-.token.tag .token.selector,
 .token.string,
-.token.tag .token.string,
 .token.char,
-.token.tag .token.char,
 .token.builtin,
-.token.tag .token.builtin,
 .token.boolean,
-.token.tag .token.boolean,
 .token.constant,
-.token.tag .token.constant,
-.token.inserted,
-.token.tag .token.inserted {
-  color: #9ed875;
+.token.inserted {
+  color: #70d175;
 }
 
-.token.operator,
-.token.tag .token.operator {
+.token.operator {
   color: #42c5c5;
 }
 
 .token.url,
-.token.tag .token.url,
-.token.function,
-.token.tag .token.function {
+.token.function {
   color: #41b3ff;
 }
 
-.token.tag > * {
-  color: #ff6673;
-}
-
-.token.tag,
+.token.tag .token.tag,
 .token.regex,
-.token.tag .token.regex,
-.token.entity,
-.token.tag .token.entity {
+.token.entity {
   color: #ffd446;
 }
 

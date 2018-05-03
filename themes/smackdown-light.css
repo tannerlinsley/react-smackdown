@@ -40,7 +40,8 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 /* Inline code */
@@ -50,18 +51,13 @@ pre[class*="language-"] {
 }
 
 .token.comment,
-.token.tag .token.comment,
 .token.prolog,
-.token.tag .token.prolog,
 .token.doctype,
-.token.tag .token.doctype,
-.token.cdata,
-.token.tag .token.cdata {
+.token.cdata {
   color: #747474;
 }
 
-.token.punctuation,
-.token.tag .token.punctuation {
+.token.punctuation {
   color: #505050;
 }
 
@@ -70,75 +66,46 @@ pre[class*="language-"] {
 }
 
 .token.keyword,
-.token.tag .token.keyword {
-  color: #aa00cc;
-}
-
 .token.property,
-.token.tag .token.property,
 .token.atrule,
-.token.tag .token.atrule,
 .token.variable,
-.token.tag .token.variable,
 .token.attr,
-.token.tag .token.attr-value,
+.token.attr-value,
 .token.symbol,
-.token.tag .token.symbol,
-.token.deleted,
-.token.tag .token.deleted {
-  color: #e62f3e;
-}
-
-.token.class,
-.token.tag .token.class-name,
-.token.attr,
-.token.tag .token.attr-name,
-.token.number,
-.token.tag .token.number,
-.token.important,
-.token.tag .token.important {
-  color: #b85900;
-}
-
-.token.selector,
-.token.tag .token.selector,
-.token.string,
-.token.tag .token.string,
-.token.char,
-.token.tag .token.char,
-.token.builtin,
-.token.tag .token.builtin,
-.token.boolean,
-.token.tag .token.boolean,
-.token.constant,
-.token.tag .token.constant,
-.token.inserted,
-.token.tag .token.inserted {
-  color: #3a8b00;
-}
-
-.token.operator,
-.token.tag .token.operator {
-  color: #007474;
-}
-
-.token.url,
-.token.tag .token.url,
-.token.function,
-.token.tag .token.function {
+.token.deleted {
   color: #006fb9;
 }
 
-.token.tag > * {
-  color: #525252;
+.token.class,
+.token.attr-name,
+.token.number,
+.token.important {
+  color: #da8300;
 }
 
-.token.tag,
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.boolean,
+.token.constant,
+.token.inserted {
+  color: #008a39;
+}
+
+.token.operator {
+  color: #009696;
+}
+
+.token.url,
+.token.function {
+  color: #d80085;
+}
+
+.token.tag .token.tag,
 .token.regex,
-.token.tag .token.regex,
-.token.entity,
-.token.tag .token.entity {
-  color: #795c00;
+.token.entity {
+  color: #e70f00;
 }
 
 .token.important,

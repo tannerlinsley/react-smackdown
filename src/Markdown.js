@@ -6,22 +6,20 @@ import generatePropsFromAttributes from 'react-html-parser/lib/utils/generatePro
 import Code from './Code'
 import makeCompiler from './makeCompiler'
 
-// See https://github.com/isagalaev/highlight.js/tree/master/src/languages
-// for all language options and https://github.com/isagalaev/highlight.js/tree/master/src/styles
-// for all theming options
-
 export default class Markdown extends React.Component {
   static propTypes = {
     renderers: PropTypes.object,
     source: PropTypes.string,
     syntax: PropTypes.object,
     markdownConfig: PropTypes.object,
+    highlightInline: PropTypes.bool,
   }
   static defaultProps = {
     renderers: {},
     source: '',
     syntax: {},
     markdownConfig: {},
+    highlightInline: true,
   }
   constructor (props) {
     super()
@@ -34,7 +32,7 @@ export default class Markdown extends React.Component {
   }
   render () {
     const {
-      source, renderers, syntax, markdownConfig, style, className, ...rest
+      source, renderers, syntax, markdownConfig, highlightInline, ...rest
     } = this.props
 
     const PreCode = props => <Code {...props} {...syntax} />
@@ -48,30 +46,48 @@ export default class Markdown extends React.Component {
         return React.createElement(Component, props, children)
       }
       // Transform any code usin the Code component
-      if (node.type === 'tag' && node.name === 'pre') {
-        if (node.children && node.children.length === 1 && node.children[0].name === 'code') {
-          node = node.children[0]
-          convertNodeToElement(node, index, transform)
+      if (node.type === 'tag') {
+        if (
+          node.name === 'pre' &&
+          (node.children && node.children.length === 1 && node.children[0].name === 'code')
+        ) {
+          const codeNode = node.children[0]
+          convertNodeToElement(codeNode, index, transform)
+
+          const generatedProps = generatePropsFromAttributes(codeNode.attribs, index)
+          let language = (generatedProps.className || '')
+            .split(' ')
+            .find(d => d.includes('language-'))
+          language = language && language.substring('language-'.length)
+
           const props = {
-            ...generatePropsFromAttributes(node.attribs, index),
-            isInPre: node.parent && node.parent.name === 'pre',
+            ...generatedProps,
+            language,
+            component: 'pre',
           }
-          return React.createElement(
-            PreCode,
-            props,
-            node.children && node.children[0] && node.children[0].data
-              ? node.children[0].data
+
+          const children =
+            codeNode.children && codeNode.children[0] && codeNode.children[0].data
+              ? codeNode.children[0].data
               : null
-          )
+          return React.createElement(PreCode, props, children)
+        } else if (highlightInline && node.name === 'code' && node.parent.name !== 'pre') {
+          const codeNode = node.children[0]
+          const props = {
+            component: 'code',
+            showLineNumbers: false,
+            className: 'code-inline',
+            language: 'clike',
+          }
+          return React.createElement(PreCode, props, codeNode.data)
         }
       }
     }
 
     return (
-      <div {...{ style, className }}>
+      <div {...rest}>
         {ReactHtmlParser(this.markdownCompiler(source), {
           transform,
-          ...rest,
         })}
       </div>
     )

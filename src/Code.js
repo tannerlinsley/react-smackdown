@@ -1,6 +1,5 @@
 import React from 'react'
 import Prism from 'prismjs'
-import loadLanguages from 'prismjs/components/index'
 //
 
 const { languages } = Prism
@@ -26,24 +25,41 @@ export default class SyntaxHighlighter extends React.Component {
   render () {
     const {
       showLineNumbers = true,
-      language = 'jsx',
-      isInPre,
-      className,
+      language,
+      className = '',
+      component = 'code',
       source,
       children,
-      syntax,
       ...rest
     } = this.props
 
-    if (!languages[language]) {
-      loadLanguages([language])
+    let resolvedLanguage = language
+
+    if (!language) {
+      resolvedLanguage = 'markup'
+    } else if (!languages[language]) {
+      console.warn(
+        `The prism language '${language}' hasn't been loaded yet! Using prism's 'markdown' language for now.
+You can import this language using the following snippet:
+
+import 'prismjs/components/prism-${language}'`
+      )
+      resolvedLanguage = 'markup'
     }
 
-    const classes = [...className.split(' '), showLineNumbers && 'line-numbers']
+    if (resolvedLanguage === 'javascript' && languages.jsx) {
+      resolvedLanguage = 'jsx'
+    }
+
+    const classes = [
+      ...className.split(' '),
+      showLineNumbers && 'line-numbers',
+      `language-${resolvedLanguage}`,
+    ]
       .filter(Boolean)
       .join(' ')
 
-    const resolvedSource = source || children
+    const resolvedSource = source || children || ''
     const lines = resolvedSource.split('\n')
     const lineCount = lines.length
 
@@ -67,12 +83,14 @@ export default class SyntaxHighlighter extends React.Component {
       )
       : ''
 
-    const html = Prism.highlight(resolvedSource, languages[language], language)
+    const html = Prism.highlight(resolvedSource, languages[resolvedLanguage], resolvedLanguage)
 
     const finalHtml = `${lineNumbers}${html}`
 
+    const Component = component
+
     return (
-      <pre
+      <Component
         className={classes}
         {...rest}
         style={

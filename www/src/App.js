@@ -6,8 +6,15 @@ import nprogress from 'nprogress'
 //
 import Routes from 'react-static-routes'
 
+import 'prismjs/components/prism-javascript.js'
+import 'prismjs/components/prism-jsx.js'
+import 'prismjs/components/prism-bash.js'
+import 'prismjs/components/prism-ruby.js'
+import 'prismjs/components/prism-elixir.js'
+import 'prismjs/components/prism-go.js'
+
 import 'nprogress/nprogress.css'
-import '../../themes/one-dark-pro.css'
+import '../../themes/smackdown-light.css'
 
 injectGlobal`
   body {
@@ -45,13 +52,12 @@ injectGlobal`
   }
 
   code.code-inline {
-    background: rgba(0,0,0,.05);
     padding: 2px 5px;
     border-radius: 5px;
-    border: 1px solid rgba(0,0,0,.05);
     font-size: .8em;
     line-height: 1.5;
   }
+}
 
   .react-syntax-highlighter-line-number {
     pointer-events: none;
