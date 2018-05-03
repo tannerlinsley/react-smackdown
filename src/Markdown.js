@@ -52,8 +52,6 @@ export default class Markdown extends React.Component {
           (node.children && node.children.length === 1 && node.children[0].name === 'code')
         ) {
           const codeNode = node.children[0]
-          convertNodeToElement(codeNode, index, transform)
-
           const generatedProps = generatePropsFromAttributes(codeNode.attribs, index)
           let language = (generatedProps.className || '')
             .split(' ')
@@ -64,22 +62,25 @@ export default class Markdown extends React.Component {
             ...generatedProps,
             language,
             component: 'pre',
+            source:
+              codeNode.children && codeNode.children[0] && codeNode.children[0].data
+                ? codeNode.children[0].data
+                : null,
           }
-
-          const children =
-            codeNode.children && codeNode.children[0] && codeNode.children[0].data
-              ? codeNode.children[0].data
-              : null
-          return React.createElement(PreCode, props, children)
+          return React.createElement(PreCode, props)
         } else if (highlightInline && node.name === 'code' && node.parent.name !== 'pre') {
           const codeNode = node.children[0]
+          const generatedProps = generatePropsFromAttributes(node.attribs, index)
+          console.log(node)
           const props = {
+            ...generatedProps,
             component: 'code',
             showLineNumbers: false,
             className: 'code-inline',
             language: 'clike',
+            source: codeNode.data,
           }
-          return React.createElement(PreCode, props, codeNode.data)
+          return React.createElement(PreCode, props)
         }
       }
     }

@@ -27,7 +27,7 @@ export default class SyntaxHighlighter extends React.Component {
       showLineNumbers = true,
       language,
       className = '',
-      component = 'code',
+      component = 'pre',
       source,
       children,
       ...rest
@@ -59,7 +59,7 @@ import 'prismjs/components/prism-${language}'`
       .filter(Boolean)
       .join(' ')
 
-    const resolvedSource = source || children || ''
+    const resolvedSource = source || ''
     const lines = resolvedSource.split('\n')
     const lineCount = lines.length
 
