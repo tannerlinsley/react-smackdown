@@ -6272,6 +6272,10 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
+reprism@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/reprism/-/reprism-0.0.11.tgz#e760b85e0ae241722032cb8942a2bcab992a9083"
+
 require-directory@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"

@@ -12,14 +12,13 @@
   "dependencies": {
     "axios": "^0.16.2",
     "nprogress": "^0.2.0",
-    "prism-themes": "^1.0.1",
-    "prismjs": "^1.14.0",
     "react": "^16.0.0",
     "react-click-outside": "^3.0.1",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-smackdown": "^0.8.8",
     "react-static": "^5.9.1",
+    "reprism": "^0.0.11",
     "styled-components": "^3"
   },
   "devDependencies": {
