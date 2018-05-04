@@ -6,15 +6,18 @@ import nprogress from 'nprogress'
 //
 import Routes from 'react-static-routes'
 
-import 'prismjs/components/prism-javascript.js'
-import 'prismjs/components/prism-jsx.js'
-import 'prismjs/components/prism-bash.js'
-import 'prismjs/components/prism-ruby.js'
-import 'prismjs/components/prism-elixir.js'
-import 'prismjs/components/prism-go.js'
+import jsx from 'reprism/languages/jsx'
+import bash from 'reprism/languages/bash'
+import ruby from 'reprism/languages/ruby'
+import elixir from 'reprism/languages/elixir'
+import go from 'reprism/languages/go'
+
+import { loadLanguages } from '../../'
 
 import 'nprogress/nprogress.css'
 import '../../themes/smackdown-light.css'
+
+loadLanguages(jsx, bash, ruby, elixir, go)
 
 injectGlobal`
   body {

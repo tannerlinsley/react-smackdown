@@ -1,8 +1,10 @@
 import React from 'react'
-import Prism from 'prismjs'
+import Prism, { highlight, loadLanguages } from 'reprism'
 //
 
-const { languages } = Prism
+export { loadLanguages }
+
+const languages = Prism.languages
 
 const toStyle = style =>
   Object.keys(style)
@@ -39,10 +41,14 @@ export default class SyntaxHighlighter extends React.Component {
       resolvedLanguage = 'markup'
     } else if (!languages[language]) {
       console.warn(
-        `The prism language '${language}' hasn't been loaded yet! Using prism's 'markdown' language for now.
+        `The reprism language '${language}' hasn't been loaded yet! Using reprism's 'markdown' language for now.
 You can import this language using the following snippet:
 
-import 'prismjs/components/prism-${language}'`
+import { loadLanguages } from 'reprism'
+import ${language} from 'reprism/languages/${language}'
+
+loadLanguages(${language})
+`
       )
       resolvedLanguage = 'markup'
     }
@@ -83,7 +89,9 @@ import 'prismjs/components/prism-${language}'`
       )
       : ''
 
-    const html = Prism.highlight(resolvedSource, languages[resolvedLanguage], resolvedLanguage)
+    const html = highlight(resolvedSource, resolvedLanguage, {
+      component: false,
+    })
 
     const finalHtml = `${lineNumbers}${html}`
 

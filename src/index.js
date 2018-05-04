@@ -1,5 +1,5 @@
 import Markdown from './Markdown'
-import Code, { registerLanguage } from './Code'
+import Code, { loadLanguages } from './Code'
 import makeCompiler from './makeCompiler'
 
-export { Markdown, Code, registerLanguage, makeCompiler }
+export { Markdown, Code, loadLanguages, makeCompiler }
