@@ -1,11 +1,15 @@
 # React Smackdown
 
-React Smackdown is the easiest way to render markdown as html in React. With a single component and string of markdown, you get server-side-compatible JSX, complete with syntax highlighting.
+React Smackdown is the easiest way to render markdown as html in React. With a single component and string of markdown, you get server-side-compatible JSX, complete with syntax highlighting. This is made possible with the following amazing libraries:
+
+* [RePrism](https://github.com/tannerlinsley/reprism)
+* [Showdown](https://github.com/showdownjs/showdown)
+* [React-Html-Parser](https://github.com/wrakky/react-html-parser)
 
 ## Features
 
 * ⚛️ React or Preact
-* 💥 Tiny
+* 💥 Small Footprint
 * 🚀 [Blazing](https://twitter.com/acdlite/status/974390255393505280) fast.
 * ⚙️ Custom Markdown-to-React Renderers
 * 🥇 Server-side-rendering
@@ -21,7 +25,7 @@ $ npm install --save react-smackdown
 
 ## `<Markdown>`
 
-Use the `<Markdown>` component to render markdown and also handle syntax highlighting automatically
+Use the `<Markdown>` component to render markdown and also handle syntax highlighting automatically.
 
 **Props**:
 
@@ -32,16 +36,19 @@ Use the `<Markdown>` component to render markdown and also handle syntax highlig
 * `highlightInline: Boolean` - Defaults to `true`. If `true`, will also highlight any inline code blocks.
 
 ````javascript
-import { Markdown } from 'smackdown'
+import { Markdown, loadLanguages } from 'smackdown'
 
-// Import any non-default Prism languages you need:
-import 'prismjs/components/prism-jsx.js'
-import 'prismjs/components/prism-bash.js'
-import 'prismjs/components/prism-go.js'
+// Import any non-default RePrism languages you need:
+import jsx from 'reprism/languages/jsx'
+import bash from 'reprism/languages/bash'
+import go from 'reprism/languages/go'
 
 // Import any Prism theme. We have two of our own "smackdown" themes:
 import 'smackdown/themes/smackdown-dark.css'
 // or  'smackdown/themes/smackdown-light.css'
+
+// Load the languages into smackdown (via RePrism)
+loadLanguages(jsx, bash, go)
 
 const someMarkdown = `
   # Hello!
@@ -128,7 +135,7 @@ If you don't need to render any markdown, but still want syntax highlighting, yo
 **Props**:
 
 * `source: String (Required)` - The code string you want to highlight and render
-* `language: String (Recommended)` - Defaults to `markup`. The `prismjs` language you want to use to highlight the source.
+* `language: String (Recommended)` - Defaults to `markup`. The [`reprism`](https://github.com/tannerlinsley/reprism) language you want to use to highlight the source.
 * `component: String | Component` - Defaults to `pre` The component you want to use to render the outer element. Change this to `code` if you need to do inline rendering of code.
 * `showLineNumbers: Boolean` - Defaults to `true`
 
