@@ -18,9 +18,9 @@ React Smackdown is the easiest way to render markdown as html in React. With a s
 
 ```bash
 # yarn
-$ yarn add react-smackdown reprism
+$ yarn add react-smackdown
 # npm
-$ npm install --save react-smackdown reprism
+$ npm install --save react-smackdown
 ```
 
 ## `<Markdown>`
