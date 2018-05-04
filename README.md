@@ -128,7 +128,7 @@ const renderers = {
 />;
 ```
 
-## `<Code>` Component
+## `<Code>`
 
 If you don't need to render any markdown, but still want syntax highlighting, you can use the `<Code>` component directly!
 
