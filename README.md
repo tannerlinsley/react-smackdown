@@ -36,7 +36,7 @@ Use the `<Markdown>` component to render markdown and also handle syntax highlig
 * `highlightInline: Boolean` - Defaults to `true`. If `true`, will also highlight any inline code blocks.
 
 ````javascript
-import { Markdown, loadLanguages } from 'smackdown'
+import { Markdown, loadLanguages } from 'react-smackdown'
 
 // Import any non-default RePrism languages you need:
 import jsx from 'reprism/languages/jsx'
