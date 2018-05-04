@@ -3,7 +3,12 @@
   "version": "1.0.0-beta.0",
   "description": "react-smackdown React component",
   "main": "lib/index.js",
-  "files": ["css", "es", "lib", "umd"],
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
@@ -18,7 +23,7 @@
   },
   "dependencies": {
     "react-html-parser": "^2.0.2",
-    "reprism": "^0.0.8",
+    "reprism": "^0.0.11",
     "showdown": "^1.8.6"
   },
   "peerDependencies": {
@@ -36,5 +41,7 @@
   "homepage": "",
   "license": "MIT",
   "repository": "",
-  "keywords": ["react-component"]
+  "keywords": [
+    "react-component"
+  ]
 }
