@@ -18,9 +18,9 @@ React Smackdown is the easiest way to render markdown as html in React. With a s
 
 ```bash
 # yarn
-$ yarn add react-smackdown
+$ yarn add react-smackdown reprism
 # npm
-$ npm install --save react-smackdown
+$ npm install --save react-smackdown reprism
 ```
 
 ## `<Markdown>`
@@ -43,7 +43,7 @@ import jsx from 'reprism/languages/jsx'
 import bash from 'reprism/languages/bash'
 import go from 'reprism/languages/go'
 
-// Import any Prism theme. We have two of our own "smackdown" themes:
+// Import any Prism-compatible theme. We even have our own "smackdown" themes!
 import 'smackdown/themes/smackdown-dark.css'
 // or  'smackdown/themes/smackdown-light.css'
 
