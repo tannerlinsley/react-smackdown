@@ -12,10 +12,10 @@ import ruby from 'reprism/languages/ruby'
 import elixir from 'reprism/languages/elixir'
 import go from 'reprism/languages/go'
 
-import { loadLanguages } from '../../'
-
 import 'nprogress/nprogress.css'
 import '../../themes/smackdown-light.css'
+
+import { loadLanguages } from '../../src/'
 
 loadLanguages(jsx, bash, ruby, elixir, go)
 
