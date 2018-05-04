@@ -9,10 +9,10 @@ React Smackdown is the easiest way to render markdown as html in React. With a s
 ## Features
 
 * ⚛️ React or Preact
-* 💥 Small Footprint
 * 🚀 [Blazing](https://twitter.com/acdlite/status/974390255393505280) fast.
 * ⚙️ Custom Markdown-to-React Renderers
-* 🥇 Server-side-rendering
+* 🥇 Server-side-rendering compatible
+* 🎨 Themeable and Extensible
 
 ## Installation
 
