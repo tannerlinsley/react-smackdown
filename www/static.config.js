@@ -41,6 +41,11 @@ const menu = [
         markdownSrc: 'src/docs/markdown.md',
       },
       {
+        path: 'code',
+        title: 'Code',
+        component: 'src/containers/Code',
+      },
+      {
         path: 'syntax',
         title: 'Syntax Highlighting',
         children: [
